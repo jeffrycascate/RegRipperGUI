@@ -25,3 +25,5 @@ C:\Users\jeffr\Documents\GitHub\RegRipperGUI\src\RegRipperGUI\bin\Debug\net6.0-w
 C:\Users\jeffr\Documents\GitHub\RegRipperGUI\src\RegRipperGUI\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
 C:\Users\jeffr\Documents\GitHub\RegRipperGUI\src\RegRipperGUI\obj\Debug\net6.0-windows\App.baml
 C:\Users\jeffr\Documents\GitHub\RegRipperGUI\src\RegRipperGUI\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\jeffr\Documents\GitHub\RegRipperGUI\src\RegRipperGUI\bin\Debug\net6.0-windows\System.Net.Http.Formatting.dll
+C:\Users\jeffr\Documents\GitHub\RegRipperGUI\src\RegRipperGUI\bin\Debug\net6.0-windows\Newtonsoft.Json.Bson.dll

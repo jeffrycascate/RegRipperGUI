@@ -12,9 +12,6 @@
         Title="MainWindow" Height="605" Width="1024
         ">
     <Grid>
-        <TextBox Name="txtPathRegRipper" HorizontalAlignment="Left" Margin="19,14,0,0" TextWrapping="Wrap" Text="Path base of the RegRipper" VerticalAlignment="Top" Width="854" />
-        <Button Name="btnPathRegRipper" Content="Browser" HorizontalAlignment="Left" Margin="888,10,0,0" VerticalAlignment="Top" Width="107" Click="btnPathRegRipper_Click" />
-        <!--<Button x:Name="btnLoadAddIns" Content="Load Add-Ins" HorizontalAlignment="Left" Margin="888,10,0,0" VerticalAlignment="Top" Width="107" Click="btnLoadAddIns_Click" />-->
         <Button x:Name="btnPathOuputFileDumpMemory" Content="Browser" HorizontalAlignment="Left" Margin="888,51,0,0" VerticalAlignment="Top" Width="107" Click="btnPathOuputFileDumpMemory_Click" />
         <TextBox x:Name="txtPathOuputFileDumpMemory" HorizontalAlignment="Left" Margin="19,58,0,0" TextWrapping="Wrap" Text="Path base of the output file dump memory" VerticalAlignment="Top" Width="854" />
 
@@ -74,5 +71,24 @@
         <Label Content="PlugIns enable." HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="525,107,0,0" VerticalAlignment="Top" Width="470"/>
         <Button x:Name="btnRun" Content="Run and copy cleaboar" HorizontalAlignment="Left" Margin="770,523,0,0" VerticalAlignment="Top" Width="225" Click="btnRun_Click" />
 
+        <materialDesign:DialogHost
+            Name="dlhNotify"             
+            CloseOnClickAway="True">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+                    <ProgressBar
+                        Name="pgbNotification"
+                        Margin="0,25,0,0"                        
+                        Style="{StaticResource MaterialDesignCircularProgressBar}"
+                        Visibility="Visible"
+                        Value="0" />
+                    <Label
+                        Name="lblMessage"
+                        Margin="0,5,0,0"
+                        HorizontalAlignment="Center"
+                        Content="..." />
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
     </Grid>
 </Window>
