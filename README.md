@@ -1,5 +1,5 @@
 # RegRipperGUI
-This repository is made to facilitate the information of the files generated in FTK Imager in the "Obtain Protected Files" option, allowing an analysis according to the selected file and its respective plugins, once selected, it makes a copy on the clieapboard.
+This repository is made to facilitate the information of the files generated in FTK Imager in the "Obtain Protected Files" option, allowing an analysis according to the selected file and its respective plugins, once selected, it makes a copy on the clipboard.
 
 Requirements for the use of the tool.
 
