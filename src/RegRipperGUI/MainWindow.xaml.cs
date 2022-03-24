@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RegRipperGUI.DTOs;
+using RegRipperGUI.Extensions;
 using RegRipperGUI.Handlers;
 using System;
 using System.Collections.Generic;
@@ -205,8 +206,7 @@ namespace RegRipperAndAddIn
 
         private void txtFilter_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            if (txtFilter.Text.Length >= 3)
-            {
+            
                 try
                 {
                     var selectedNode = trwOutPutFiles.SelectedItem as RegRipperGUI.DTOs.File;
@@ -214,7 +214,8 @@ namespace RegRipperAndAddIn
                     {
                         var items = RegRipperGUI.Handlers.RegRipperHandler.AddIns(pathRegRipper);
                         items = items.Where(c => c.Filters.Contains("All") || c.Filters.Contains(selectedNode.Name, StringComparer.CurrentCultureIgnoreCase)).ToList();
-                        items = items.Where(c => c.Description.Contains("*") || c.Description.ToLower().Contains(txtFilter.Text.ToLower())).ToList();
+                        if(txtFilter.Text.IsNotEmpty())
+                            items = items.Where(c => txtFilter.Text == "*" || c.Description.ToLower().Contains(txtFilter.Text.ToLower())).ToList();
                         trwAddIns.ItemsSource = items;
                     }
                     else
@@ -222,9 +223,7 @@ namespace RegRipperAndAddIn
                 }
                 catch (Exception)
                 {
-                }
-                
-            }
+                }  
         }
     }
 }
