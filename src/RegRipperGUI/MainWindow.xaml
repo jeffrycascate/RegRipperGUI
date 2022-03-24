@@ -1,12 +1,78 @@
 ﻿<Window x:Class="RegRipperAndAddIn.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RegRipperAndAddIn"
+        xmlns:DTOs_Manager="clr-namespace:RegRipperGUI.DTOs"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        WindowStartupLocation ="CenterScreen"
+        Closed="Window_Closed"
+        Loaded="Window_Loaded"
+        Title="MainWindow" Height="605" Width="1024
+        ">
     <Grid>
+        <TextBox Name="txtPathRegRipper" HorizontalAlignment="Left" Margin="19,14,0,0" TextWrapping="Wrap" Text="Path base of the RegRipper" VerticalAlignment="Top" Width="854" />
+        <Button Name="btnPathRegRipper" Content="Browser" HorizontalAlignment="Left" Margin="888,10,0,0" VerticalAlignment="Top" Width="107" Click="btnPathRegRipper_Click" />
+        <!--<Button x:Name="btnLoadAddIns" Content="Load Add-Ins" HorizontalAlignment="Left" Margin="888,10,0,0" VerticalAlignment="Top" Width="107" Click="btnLoadAddIns_Click" />-->
+        <Button x:Name="btnPathOuputFileDumpMemory" Content="Browser" HorizontalAlignment="Left" Margin="888,51,0,0" VerticalAlignment="Top" Width="107" Click="btnPathOuputFileDumpMemory_Click" />
+        <TextBox x:Name="txtPathOuputFileDumpMemory" HorizontalAlignment="Left" Margin="19,58,0,0" TextWrapping="Wrap" Text="Path base of the output file dump memory" VerticalAlignment="Top" Width="854" />
+
+        <TreeView
+            x:Name="trwOutPutFiles"
+            Margin="19,131,525,62"
+            ItemsSource="{Binding}"
+            KeyUp="trwOutPutFiles_KeyUp"
+            SelectedItemChanged="trwOutPutFiles_SelectedItemChanged">
+            <TreeView.Resources>
+                <Style TargetType="TreeViewItem">
+                    <Setter Property="IsExpanded" Value="{Binding Path=IsExpanded, Mode=TwoWay}" />
+                </Style>
+
+                <HierarchicalDataTemplate DataType="{x:Type DTOs_Manager:File }" ItemsSource="{Binding Path=Childs, Mode=TwoWay}">
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Margin="0,0,0,2" IsChecked="{Binding IsSelected}" />
+                        <Viewbox Width="16" Height="16">
+                            <materialDesign:PackIcon
+                                Width="24"
+                                Height="24"
+                                Kind="{Binding Icon}" />
+                        </Viewbox>
+                        <TextBlock Margin="8,0,0,0" Text="{Binding Name}" />
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.Resources>
+        </TreeView>
+
+        <TreeView
+            x:Name="trwAddIns"
+            Margin="525,131,10,62"
+            ItemsSource="{Binding}"
+            KeyUp="trwAddIns_KeyUp"
+            SelectedItemChanged="trwAddIns_SelectedItemChanged">
+            <TreeView.Resources>
+                <Style TargetType="TreeViewItem">
+                    <Setter Property="IsExpanded" Value="{Binding Path=IsExpanded, Mode=TwoWay}" />
+                </Style>
+
+                <HierarchicalDataTemplate DataType="{x:Type DTOs_Manager:AddIn }" ItemsSource="{Binding Path=Childs, Mode=TwoWay}">
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Margin="0,0,0,2" IsChecked="{Binding IsSelected}" />
+                        <Viewbox Width="16" Height="16" >
+                            <materialDesign:PackIcon
+                                Width="24"
+                                Height="24"
+                                Kind="Plugin" />
+                        </Viewbox>
+                        <TextBlock Margin="8,0,0,0" Text="{Binding Name}" ToolTip="{Binding Description}" />
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.Resources>
+        </TreeView>
+        <Label Content="Files enable." HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="19,103,0,0" VerticalAlignment="Top" Width="480"/>
+
+        <Label Content="PlugIns enable." HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="525,107,0,0" VerticalAlignment="Top" Width="470"/>
+        <Button x:Name="btnRun" Content="Run and copy cleaboar" HorizontalAlignment="Left" Margin="770,523,0,0" VerticalAlignment="Top" Width="225" Click="btnRun_Click" />
 
     </Grid>
 </Window>

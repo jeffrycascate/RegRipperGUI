@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Os7y94pjAh1XEenyauSwFdVRAvD/iwTr0uTYEk1f7HMsLptUbm4Ag1zFrJ0or7JsUQCj31OrRvuJgAbIuGDvUA==",
+  "dgSpecHash": "KaEHypxatut7DvFKcgSkcsgc20qLbSqDamEVZca8sSwpoLhB1e19/52J9ZaR0pY8ERBqqmupJpThZ4IzKt/06g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jeffr\\source\\repos\\RegRipperAndAddIn\\RegRipperAndAddIn\\RegRipperAndAddIn.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\jeffr\\Documents\\GitHub\\RegRipperGUI\\src\\RegRipperGUI\\RegRipperGUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jeffr\\.nuget\\packages\\materialdesigncolors\\2.0.5\\materialdesigncolors.2.0.5.nupkg.sha512",
+    "C:\\Users\\jeffr\\.nuget\\packages\\materialdesignthemes\\4.4.0\\materialdesignthemes.4.4.0.nupkg.sha512",
+    "C:\\Users\\jeffr\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
