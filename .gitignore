@@ -5,3 +5,9 @@ src/RegRipperGUI/bin/Debug/net6.0-windows/RegRipper/plugins/devclass.pl
 src/RegRipperGUI/bin/Debug
 src/RegRipperGUI/bin/Debug/net6.0-windows/RegRipperGUI.deps.json
 src/RegRipperGUI/bin/Debug/net6.0-windows/RegRipperGUI.pdb
+src/RegRipperGUI/bin/Debug/net6.0-windows/RegRipperGUI.pdb
+src/RegRipperGUI/obj/Debug/net6.0-windows/MainWindow.baml
+src/RegRipperGUI/obj/Debug/net6.0-windows/MainWindow.g.cs
+src/RegRipperGUI/obj/Debug/net6.0-windows/MainWindow.g.i.cs
+src/RegRipperGUI/obj/Debug/net6.0-windows/RegRipperGUI.g.resources
+src/RegRipperGUI/obj/Debug/net6.0-windows/RegRipperGUI.pdb
