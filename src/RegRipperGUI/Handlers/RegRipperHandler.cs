@@ -11,24 +11,30 @@ namespace RegRipperGUI.Handlers
     {
         internal static List<DTOs.AddIn>  AddIns(string path)
         {
-            List<DTOs.AddIn> items = new List<DTOs.AddIn>(); 
-
-            Process process = new Process();
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.RedirectStandardError = true;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.FileName = $"{path}\\rip.exe";
-            process.StartInfo.Arguments = "-l";
-            process.StartInfo.WorkingDirectory = "";
-            process.Start();
-            var addIns = process.StandardOutput.ReadToEnd().Split(new String[] { "\r\n\r\n" }, System.StringSplitOptions.RemoveEmptyEntries);
-            foreach (var item in addIns)
+            List<DTOs.AddIn> items = new List<DTOs.AddIn>();
+            var key = "AddIns_key";
+            if (Handlers.CachingHandler.NotExist(key))
             {
-                var array = item.Split(new String[] { "\r\n" }, System.StringSplitOptions.RemoveEmptyEntries);
-                items.Add(new DTOs.AddIn { Name = array[0].Split(" ")[1].Trim() , Filters  = Filters(array[0].Split(" ")[3].Trim()) ,  Description = array[1].Trim().Replace("- ", "") });
+                Process process = new Process();
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.StartInfo.CreateNoWindow = true;
+                process.StartInfo.FileName = $"{path}\\rip.exe";
+                process.StartInfo.Arguments = "-l";
+                process.StartInfo.WorkingDirectory = "";
+                process.Start();
+                var addIns = process.StandardOutput.ReadToEnd().Split(new String[] { "\r\n\r\n" }, System.StringSplitOptions.RemoveEmptyEntries);
+                foreach (var item in addIns)
+                {
+                    var array = item.Split(new String[] { "\r\n" }, System.StringSplitOptions.RemoveEmptyEntries);
+                    items.Add(new DTOs.AddIn { Name = array[0].Split(" ")[1].Trim(), Filters = Filters(array[0].Split(" ")[3].Trim()), Description = array[1].Trim().Replace("- ", "") });
+                }
+                Handlers.CachingHandler.SetItem(key, items);   
             }
+            else
+                items = (List<DTOs.AddIn>) Handlers.CachingHandler.GetItem(key);
             return items.OrderByDescending( c=> c.Name).ToList() ;   
         }
 

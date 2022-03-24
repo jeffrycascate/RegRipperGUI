@@ -3,3 +3,5 @@
 src/RegRipperGUI/obj/Debug/net6.0-windows/App.g.cs
 src/RegRipperGUI/bin/Debug/net6.0-windows/RegRipper/plugins/devclass.pl
 src/RegRipperGUI/bin/Debug
+src/RegRipperGUI/bin/Debug/net6.0-windows/RegRipperGUI.deps.json
+src/RegRipperGUI/bin/Debug/net6.0-windows/RegRipperGUI.pdb

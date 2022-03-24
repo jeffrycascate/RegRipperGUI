@@ -11,6 +11,7 @@ using System.Net.Http.Handlers;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Windows;
+using System.Windows.Input;
 
 namespace RegRipperAndAddIn
 {
@@ -199,6 +200,30 @@ namespace RegRipperAndAddIn
             }
             catch (Exception)
             {
+            }
+        }
+
+        private void txtFilter_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (txtFilter.Text.Length >= 3)
+            {
+                try
+                {
+                    var selectedNode = trwOutPutFiles.SelectedItem as RegRipperGUI.DTOs.File;
+                    if (selectedNode != null && !selectedNode.IsFolder)
+                    {
+                        var items = RegRipperGUI.Handlers.RegRipperHandler.AddIns(pathRegRipper);
+                        items = items.Where(c => c.Filters.Contains("All") || c.Filters.Contains(selectedNode.Name, StringComparer.CurrentCultureIgnoreCase)).ToList();
+                        items = items.Where(c => c.Description.Contains("*") || c.Description.ToLower().Contains(txtFilter.Text.ToLower())).ToList();
+                        trwAddIns.ItemsSource = items;
+                    }
+                    else
+                        trwAddIns.ItemsSource = null;
+                }
+                catch (Exception)
+                {
+                }
+                
             }
         }
     }

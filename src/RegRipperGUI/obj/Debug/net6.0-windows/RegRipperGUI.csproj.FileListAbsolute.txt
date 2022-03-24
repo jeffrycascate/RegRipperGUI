@@ -28,3 +28,5 @@ C:\Users\jeffr\Documents\GitHub\RegRipperGUI\src\RegRipperGUI\obj\Debug\net6.0-w
 C:\Users\jeffr\Documents\GitHub\RegRipperGUI\src\RegRipperGUI\obj\Debug\net6.0-windows\RegRipperGUI.pdb
 C:\Users\jeffr\Documents\GitHub\RegRipperGUI\src\RegRipperGUI\obj\Debug\net6.0-windows\RegRipperGUI.genruntimeconfig.cache
 C:\Users\jeffr\Documents\GitHub\RegRipperGUI\src\RegRipperGUI\obj\Debug\net6.0-windows\ref\RegRipperGUI.dll
+C:\Users\jeffr\Documents\GitHub\RegRipperGUI\src\RegRipperGUI\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+C:\Users\jeffr\Documents\GitHub\RegRipperGUI\src\RegRipperGUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll

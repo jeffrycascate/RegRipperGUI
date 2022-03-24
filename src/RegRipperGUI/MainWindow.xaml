@@ -13,7 +13,7 @@
         ">
     <Grid>
         <Button x:Name="btnPathOuputFileDumpMemory" Content="Browser" HorizontalAlignment="Left" Margin="888,51,0,0" VerticalAlignment="Top" Width="107" Click="btnPathOuputFileDumpMemory_Click" />
-        <TextBox x:Name="txtPathOuputFileDumpMemory" HorizontalAlignment="Left" Margin="19,58,0,0" TextWrapping="Wrap" Text="Path base of the output file dump memory" VerticalAlignment="Top" Width="854" />
+        <TextBox x:Name="txtPathOuputFileDumpMemory"  materialDesign:HintAssist.Hint="Path base of the output file dump memory"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" HorizontalAlignment="Left" Margin="19,49,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="854" />
 
         <TreeView
             x:Name="trwOutPutFiles"
@@ -43,7 +43,7 @@
 
         <TreeView
             x:Name="trwAddIns"
-            Margin="525,131,10,62"
+            Margin="525,185,29,62"
             ItemsSource="{Binding}"
             KeyUp="trwAddIns_KeyUp"
             SelectedItemChanged="trwAddIns_SelectedItemChanged">
@@ -55,7 +55,7 @@
                 <HierarchicalDataTemplate DataType="{x:Type DTOs_Manager:AddIn }" ItemsSource="{Binding Path=Childs, Mode=TwoWay}">
                     <StackPanel Orientation="Horizontal">
                         <CheckBox Margin="0,0,0,2" IsChecked="{Binding IsSelected}" />
-                        <Viewbox Width="16" Height="16" >
+                        <Viewbox Width="16" Height="16">
                             <materialDesign:PackIcon
                                 Width="24"
                                 Height="24"
@@ -66,19 +66,19 @@
                 </HierarchicalDataTemplate>
             </TreeView.Resources>
         </TreeView>
-        <Label Content="Files enable." HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="19,103,0,0" VerticalAlignment="Top" Width="480"/>
+        <Label Content="Files enable." HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="19,103,0,0" VerticalAlignment="Top" Width="480" />
 
-        <Label Content="PlugIns enable." HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="525,107,0,0" VerticalAlignment="Top" Width="470"/>
+        <Label Content="PlugIns enable." HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="525,107,0,0" VerticalAlignment="Top" Width="470" />
         <Button x:Name="btnRun" Content="Run and copy cleaboar" HorizontalAlignment="Left" Margin="770,523,0,0" VerticalAlignment="Top" Width="225" Click="btnRun_Click" />
 
         <materialDesign:DialogHost
-            Name="dlhNotify"             
+            Name="dlhNotify"    Visibility="Hidden"
             CloseOnClickAway="True">
             <materialDesign:DialogHost.DialogContent>
                 <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
                     <ProgressBar
                         Name="pgbNotification"
-                        Margin="0,25,0,0"                        
+                        Margin="0,25,0,0"
                         Style="{StaticResource MaterialDesignCircularProgressBar}"
                         Visibility="Visible"
                         Value="0" />
@@ -90,5 +90,6 @@
                 </StackPanel>
             </materialDesign:DialogHost.DialogContent>
         </materialDesign:DialogHost>
+        <TextBox x:Name="txtFilter" KeyUp="txtFilter_KeyDown"  materialDesign:HintAssist.Hint="Find in description the AddIns, if used '*' return all items without filterd"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" HorizontalAlignment="Left" Margin="525,132,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="470" />
     </Grid>
 </Window>
