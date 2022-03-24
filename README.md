@@ -3,7 +3,7 @@ This repository is made to facilitate the information of the files generated in 
 
 Requirements for the use of the tool.
 
-1.Net Core 6.
+1.Net Core 6. [here] (https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
 Compiled Version
 
