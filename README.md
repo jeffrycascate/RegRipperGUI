@@ -5,4 +5,4 @@ Requirements for the use of the tool.
 1.Net Core 6.
 
 Compiled Version
-see documentation [here](RegRipperGUI/deploy/deploy.zip)
+see documentation [here](deploy/deploy.zip)
