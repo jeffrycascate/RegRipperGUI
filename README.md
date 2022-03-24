@@ -5,4 +5,5 @@ Requirements for the use of the tool.
 1.Net Core 6.
 
 Compiled Version
+<a href="deploy/deploy.zip" target="_blank" />
 see documentation [here](deploy/deploy.zip)
